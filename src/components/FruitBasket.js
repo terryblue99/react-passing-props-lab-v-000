@@ -13,7 +13,7 @@ class FruitBasket extends Component {
     };
   }
 
-  handleFilterChange = event => {
+  handleChange = event => {
     console.log('new filter: ', event.target.value);
     this.setState({ selectedFilter: event.target.value });
   }
@@ -21,7 +21,7 @@ class FruitBasket extends Component {
   render() {
     return (
       <div className="fruit-basket">
-        <Filter handleChange={this.handleFilterChange} />
+        <Filter />
         <FilteredFruitList
           filter={this.state.selectedFilter} />
       </div>
