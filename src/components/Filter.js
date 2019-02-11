@@ -1,7 +1,11 @@
 import React from 'react'
 
 const Filter = (props) => {
-  
+
+  fetch('/api/fruit_types')
+    .then(response => response.json())
+    .then(filters => props.filters)
+
   return (
     <select onChange={props.handleChange} defaultValue='all'>
       <option value='all'>All</option>
@@ -10,7 +14,6 @@ const Filter = (props) => {
       )}
     </select>
   )
-  
 }
 
 Filter.defaultProps = {

@@ -4,16 +4,15 @@ import Filter from './Filter'
 import FilteredFruitList from './FilteredFruitList.js'
 
 const FruitBasket = (props) => {
-
-
-  const handleChange = event => {
-    console.log('new filter: ', event.target.value)
-    props.setState({ currentFilter: event.target.value })
-  }
   
+  const updateFilterCallback = event => {
+    console.log('new filter: ', event.target.value)
+    props.App.setState({ currentFilter: event.target.value })
+  }
+
   return (
     <div className="fruit-basket">
-      <Filter />
+      <Filter handleChange={updateFilterCallback} />
       <FilteredFruitList
         filter={props.currentFilter} />
     </div>
