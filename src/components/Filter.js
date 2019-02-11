@@ -16,6 +16,6 @@ const Filter = (props) => {
 Filter.defaultProps = {
   filters: "all",
   handleChange: "all"
-};
+}
 
 export default Filter
