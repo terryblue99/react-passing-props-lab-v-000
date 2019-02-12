@@ -2,7 +2,7 @@ import React from 'react'
 
 const FilteredFruitList = ({ fruit, filter }) => { 
  
-  const list = !filter ?  fruit : fruit.filter(item => item.fruit_type === filter)
+  const list = !filter  || filter === 'all' ?  fruit : fruit.filter(item => item.fruit_type === filter)
   
   return (  
     <ul className="fruit-list">

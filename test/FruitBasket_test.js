@@ -41,9 +41,9 @@ describe('<FruitBasket />', () => {
     expect(FruitBasket.defaultProps).to.have.any.key('currentFilter');
   });
 
-  it('should have defaultProp "updateFilterCallback"', () => {
+  it('should have defaultProp "updateFilter"', () => {
     expect(FruitBasket.defaultProps, 'defaultProps not defined.').to.exist;
-    expect(FruitBasket.defaultProps).to.have.any.key('updateFilterCallback');
+    expect(FruitBasket.defaultProps).to.have.any.key('updateFilter');
   });
 
   it('should have a top-level div with class "fruit-basket"', () => {
