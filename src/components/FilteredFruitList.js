@@ -1,24 +1,19 @@
 import React from 'react'
 
-const FilteredFruitList = (props) => { 
+const FilteredFruitList = ({ fruit, filter }) => { 
  
-  const list = !props.filter || props.filter === 'all' ? props.fruit : props.fruit.filter(i => i.fruit_type === props.filter)
-
-  fetch('/api/fruit')
-    .then(response => response.json())
-    .then(fruit => props.fruit)
+  const list = !filter ?  fruit : fruit.filter(item => item.fruit_type === filter)
   
-  return (
-    
+  return (  
     <ul className="fruit-list">
-      {list.map((item, index) => <li key={index}>{item.char}</li>)}
+      {list.map((fruit, index) => <li key={index}>{fruit.char}</li>)}
     </ul>
   )
 }      
 
 FilteredFruitList.defaultProps = {
-  fruit: "all",
-  filter: "all"
+  fruit: [],
+  filter:null
 }
 
 export default FilteredFruitList
